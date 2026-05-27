@@ -1,0 +1,1319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visit Ethiopia — Discover the Soul of Africa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --earth: #1c140e;
+        --amber: #f2c94c;
+        --sage: #254a32;
+        --cream: #f5f0e8;
+        --mist: #e8e3d8;
+        --forest: #0e2b1d;
+        --gold: #e8b52e;
+        --ivory: #faf7f2;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background:
+          radial-gradient(
+            1200px 600px at 80% -10%,
+            rgba(201, 123, 42, 0.14),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 500px at -10% 20%,
+            rgba(74, 103, 65, 0.12),
+            transparent 55%
+          ),
+          var(--ivory);
+        color: var(--earth);
+        overflow-x: hidden;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        padding: 1.4rem 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition:
+          background 0.4s,
+          backdrop-filter 0.4s;
+      }
+      nav.scrolled {
+        background: rgba(250, 247, 242, 0.88);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 1px 0 rgba(44, 26, 14, 0.08);
+      }
+      .nav-logo {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--cream);
+        letter-spacing: 0.04em;
+        transition: color 0.4s;
+      }
+      nav.scrolled .nav-logo {
+        color: var(--earth);
+      }
+      .nav-cta {
+        background: var(--amber);
+        color: #fff;
+        border: none;
+        border-radius: 2rem;
+        padding: 0.55rem 1.4rem;
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 500;
+        cursor: pointer;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        transition:
+          background 0.25s,
+          transform 0.2s,
+          box-shadow 0.25s;
+        text-decoration: none;
+        box-shadow: 0 14px 28px rgba(44, 26, 14, 0.18);
+      }
+      .nav-cta:hover {
+        background: var(--forest);
+        transform: translateY(-1px);
+      }
+
+      /* ── HERO ── */
+      .hero {
+        position: relative;
+        height: 100vh;
+        min-height: 600px;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            to top,
+            rgba(14, 43, 29, 0.88) 0%,
+            rgba(14, 43, 29, 0.35) 55%,
+            rgba(14, 43, 29, 0.12) 100%
+          ),
+          url("ethiopianwolfsimienmountains.jpg") center/cover no-repeat;
+        transform: scale(1.04);
+        animation: heroZoom 14s ease-out forwards;
+      }
+      @keyframes heroZoom {
+        to {
+          transform: scale(1);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 0 5vw 6rem;
+        max-width: 860px;
+        animation: fadeUp 0.9s 0.3s both;
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        color: #fff;
+        border-radius: 2rem;
+        padding: 0.35rem 1rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 1.4rem;
+      }
+      .hero-badge span {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+      h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(3.2rem, 9vw, 7.5rem);
+        font-weight: 300;
+        line-height: 0.95;
+        color: #fff;
+        letter-spacing: -0.01em;
+      }
+      h1 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .hero-sub {
+        margin-top: 1.4rem;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: clamp(0.95rem, 2vw, 1.15rem);
+        font-weight: 300;
+        max-width: 480px;
+        line-height: 1.65;
+      }
+      .hero-actions {
+        margin-top: 2.4rem;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .btn-primary {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        background: var(--amber);
+        color: #fff;
+        border: none;
+        border-radius: 3rem;
+        padding: 0.85rem 2rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition:
+          background 0.25s,
+          transform 0.2s,
+          box-shadow 0.25s;
+        text-decoration: none;
+        box-shadow: 0 18px 36px rgba(44, 26, 14, 0.18);
+      }
+      .btn-primary:hover {
+        background: var(--forest);
+        transform: translateY(-2px);
+      }
+      .btn-ghost {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.88rem;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: color 0.2s;
+      }
+      .btn-ghost:hover {
+        color: #fff;
+      }
+
+      /* app store badges */
+      .store-badges {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+      }
+      .store-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 0.75rem;
+        padding: 0.5rem 1.1rem;
+        color: #fff;
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          transform 0.2s,
+          box-shadow 0.25s;
+        box-shadow: 0 16px 30px rgba(20, 12, 6, 0.25);
+      }
+      .store-badge:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-1px);
+      }
+      .store-badge svg {
+        width: 18px;
+        height: 18px;
+        fill: #fff;
+        flex-shrink: 0;
+      }
+      .store-badge-text {
+        display: flex;
+        flex-direction: column;
+      }
+      .store-badge-text small {
+        font-size: 0.6rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.7;
+      }
+      .store-badge-text strong {
+        font-size: 0.82rem;
+        font-weight: 500;
+      }
+
+      /* hero scroll hint */
+      .scroll-hint {
+        position: absolute;
+        bottom: 2.4rem;
+        right: 5vw;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .scroll-line {
+        width: 1px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.25);
+        animation: scrollPulse 1.8s ease-in-out infinite;
+      }
+      @keyframes scrollPulse {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scaleY(1);
+        }
+        50% {
+          opacity: 0.8;
+          transform: scaleY(1.2);
+        }
+      }
+
+      /* ── STATS BAR ── */
+      .stats-bar {
+        background: linear-gradient(
+          135deg,
+          #0e2b1d 0%,
+          #1e3f2c 55%,
+          #0e2b1d 100%
+        );
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        flex-wrap: wrap;
+        border-radius: 1.6rem;
+        overflow: hidden;
+        box-shadow: 0 26px 60px rgba(14, 43, 29, 0.32);
+        width: min(1200px, 100% - 10vw);
+        margin: 1.5rem auto 0;
+      }
+      .stat {
+        padding: 1.8rem 3.5rem;
+        text-align: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .stat:last-child {
+        border-right: none;
+      }
+      .stat-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.2rem;
+        font-weight: 600;
+        line-height: 1;
+        color: var(--gold);
+      }
+      .stat-label {
+        font-size: 0.73rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.6;
+        margin-top: 0.3rem;
+      }
+
+      /* ── SECTION ── */
+      section {
+        padding: 7rem 5vw;
+      }
+      .section-label {
+        font-size: 0.73rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--amber);
+        font-weight: 500;
+        margin-bottom: 0.9rem;
+      }
+      h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.2rem, 5vw, 3.8rem);
+        font-weight: 300;
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+      }
+      h2 em {
+        font-style: italic;
+        color: var(--sage);
+      }
+
+      /* ── APP SECTION ── */
+      .app-section {
+        background:
+          radial-gradient(
+            600px 300px at 80% 0%,
+            rgba(201, 123, 42, 0.12),
+            transparent 60%
+          ),
+          var(--cream);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+      .app-section .text-col {
+        max-width: 480px;
+      }
+      .app-desc {
+        color: #5a4535;
+        line-height: 1.75;
+        margin-top: 1.2rem;
+        font-size: 1.02rem;
+      }
+      .feature-list {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+      }
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.85rem;
+        background: #fff;
+        border-radius: 0.85rem;
+        padding: 1rem 1.2rem;
+        box-shadow: 0 2px 8px rgba(44, 26, 14, 0.06);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .feature-item:hover {
+        transform: translateX(4px);
+        box-shadow: 0 4px 16px rgba(44, 26, 14, 0.1);
+      }
+      .feature-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 0.6rem;
+        background: var(--sage);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 1.1rem;
+      }
+      .feature-text strong {
+        display: block;
+        font-size: 0.9rem;
+        margin-bottom: 0.18rem;
+      }
+      .feature-text span {
+        font-size: 0.82rem;
+        color: #7a6555;
+        line-height: 1.5;
+      }
+
+      /* app screenshots */
+      .screenshot-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(160px, 1fr));
+        gap: 1.4rem;
+        align-items: end;
+      }
+      .screenshot-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: center;
+      }
+      .screenshot-image {
+        --shot-rotate: 0deg;
+        --shot-rise: 0px;
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 1.35rem;
+        box-shadow: 0 26px 60px rgba(14, 43, 29, 0.28);
+        background: #0b120d;
+        transform: translateY(var(--shot-rise)) rotate(var(--shot-rotate));
+        transition: transform 0.3s ease;
+      }
+      .screenshot-image.tall {
+        --shot-rise: -10px;
+      }
+      .screenshot-item:nth-child(1) .screenshot-image {
+        --shot-rotate: -2deg;
+      }
+      .screenshot-item:nth-child(2) .screenshot-image {
+        --shot-rotate: 1.5deg;
+      }
+      .screenshot-item:nth-child(3) .screenshot-image {
+        --shot-rotate: -1deg;
+      }
+      .screenshot-caption {
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #2b3a2e;
+        font-weight: 600;
+      }
+
+      /* ── DESTINATIONS ── */
+      .destinations-section {
+        background: var(--ivory);
+      }
+      .destinations-section h2 {
+        max-width: 600px;
+        margin-bottom: 3rem;
+      }
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.2rem;
+      }
+      .dest-card {
+        border-radius: 1.2rem;
+        overflow: hidden;
+        position: relative;
+        aspect-ratio: 3/4;
+        cursor: pointer;
+        box-shadow: 0 20px 40px rgba(44, 26, 14, 0.12);
+        transition:
+          transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          box-shadow 0.35s;
+      }
+      .dest-card:hover {
+        transform: translateY(-6px) scale(1.015);
+        box-shadow: 0 30px 60px rgba(44, 26, 14, 0.22);
+      }
+      .dest-card-img {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.6s ease;
+      }
+      .dest-card:hover .dest-card-img {
+        transform: scale(1.05);
+      }
+      .dest-card-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(28, 20, 10, 0.9) 0%,
+          rgba(28, 20, 10, 0.1) 55%,
+          transparent 100%
+        );
+      }
+      .dest-card-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+      }
+      .dest-tag {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 2rem;
+        color: #fff;
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.75rem;
+        margin-bottom: 0.6rem;
+      }
+      .dest-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #fff;
+        line-height: 1.2;
+      }
+      .dest-meta {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.78rem;
+        margin-top: 0.35rem;
+      }
+
+      /* ── WILDLIFE ── */
+      .wildlife-section {
+        background: var(--forest);
+        color: #fff;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+      .wildlife-section h2 {
+        color: #fff;
+      }
+      .wildlife-section h2 em {
+        color: var(--gold);
+      }
+      .wildlife-desc {
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.75;
+        margin-top: 1.2rem;
+        font-size: 1.02rem;
+      }
+      .wildlife-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+      .wildlife-img {
+        border-radius: 1rem;
+        overflow: hidden;
+        aspect-ratio: 1/1;
+        transition: transform 0.3s;
+      }
+      .wildlife-img:first-child {
+        aspect-ratio: 2/1;
+        grid-column: 1/-1;
+      }
+      .wildlife-img:hover {
+        transform: scale(1.02);
+      }
+      .wildlife-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* ── GUIDES ── */
+      .guides-section {
+        background: var(--cream);
+        text-align: center;
+      }
+      .guides-section h2 {
+        max-width: 540px;
+        margin: 0 auto 1rem;
+      }
+      .guides-desc {
+        color: #6a5545;
+        max-width: 500px;
+        margin: 0 auto 3rem;
+        line-height: 1.7;
+      }
+      .guides-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        gap: 1.2rem;
+        text-align: left;
+      }
+      .guide-card {
+        background: #fff;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 2px 12px rgba(44, 26, 14, 0.06);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+      }
+      .guide-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(44, 26, 14, 0.1);
+      }
+      .guide-avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--sage);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+      .guide-name {
+        font-weight: 500;
+        font-size: 0.92rem;
+      }
+      .guide-org {
+        font-size: 0.78rem;
+        color: var(--amber);
+        margin-bottom: 0.6rem;
+      }
+      .guide-region {
+        font-size: 0.8rem;
+        color: #7a6555;
+        line-height: 1.5;
+      }
+
+      /* ── APP DOWNLOAD CTA ── */
+      .cta-section {
+        background: var(--earth);
+        color: #fff;
+        text-align: center;
+        padding: 7rem 5vw;
+      }
+      .cta-section .section-label {
+        color: var(--gold);
+      }
+      .cta-section h2 {
+        color: #fff;
+        max-width: 600px;
+        margin: 0 auto 1rem;
+      }
+      .cta-section h2 em {
+        color: var(--gold);
+      }
+      .cta-desc {
+        color: rgba(255, 255, 255, 0.6);
+        max-width: 420px;
+        margin: 0 auto 3rem;
+        line-height: 1.7;
+      }
+      .cta-badges {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .cta-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 1rem;
+        padding: 0.85rem 1.6rem;
+        color: #fff;
+        text-decoration: none;
+        transition:
+          background 0.2s,
+          transform 0.2s,
+          box-shadow 0.25s;
+        box-shadow: 0 16px 30px rgba(15, 9, 5, 0.35);
+      }
+      .cta-badge:hover {
+        background: rgba(255, 255, 255, 0.14);
+        transform: translateY(-2px);
+      }
+      .cta-badge svg {
+        width: 24px;
+        height: 24px;
+        fill: #fff;
+      }
+      .cta-badge-text small {
+        display: block;
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.6;
+      }
+      .cta-badge-text strong {
+        font-size: 1rem;
+      }
+      .qr-row {
+        margin-top: 3rem;
+        display: flex;
+        justify-content: center;
+      }
+      .qr-box {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1rem;
+        padding: 1.5rem 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .qr-placeholder {
+        width: 84px;
+        height: 84px;
+        background: #fff;
+        border-radius: 0.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px;
+      }
+      .qr-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        border-radius: 0.4rem;
+      }
+      .qr-cell {
+        background: #000;
+        border-radius: 1px;
+      }
+      .qr-cell.w {
+        background: #fff;
+      }
+      .qr-info {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.82rem;
+        line-height: 1.6;
+        text-align: left;
+      }
+      .qr-info strong {
+        display: block;
+        color: #fff;
+        font-size: 0.92rem;
+        margin-bottom: 0.3rem;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: #0f0905;
+        color: rgba(255, 255, 255, 0.35);
+        padding: 2.5rem 5vw;
+        text-align: center;
+        font-size: 0.78rem;
+      }
+      footer a {
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        margin: 0 0.75rem;
+      }
+      footer a:hover {
+        color: var(--gold);
+      }
+
+      /* ── UTILS ── */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition:
+          opacity 0.7s,
+          transform 0.7s;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 860px) {
+        nav {
+          padding: 1rem 1.5rem;
+        }
+        section {
+          padding: 5rem 5vw;
+        }
+        .app-section,
+        .wildlife-section {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .stat {
+          padding: 1.4rem 1.8rem;
+        }
+        .wildlife-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .screenshot-gallery {
+          grid-template-columns: repeat(2, minmax(140px, 1fr));
+          justify-items: center;
+        }
+        .screenshot-image {
+          max-width: 240px;
+        }
+      }
+      @media (max-width: 560px) {
+        .hero-content {
+          padding: 0 1.5rem 4rem;
+        }
+        .stats-bar {
+          flex-direction: column;
+        }
+        .stat {
+          border-right: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .screenshot-gallery {
+          grid-template-columns: 1fr;
+        }
+        .screenshot-image {
+          max-width: 220px;
+          --shot-rotate: 0deg;
+          --shot-rise: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav id="nav">
+      <span class="nav-logo">Visit Ethiopia</span>
+      <a href="#download" class="nav-cta">Get the App</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span></span> Now available on iOS &amp; Android
+        </div>
+        <h1>Discover the<br /><em>Soul of Africa</em></h1>
+        <p class="hero-sub">
+          Plan soulful journeys across national parks, highland monasteries, and
+          surreal lava fields — all from one beautiful app.
+        </p>
+        <div class="hero-actions">
+          <a href="#download" class="btn-primary">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path d="M12 2a10 10 0 100 20A10 10 0 0012 2z" />
+              <path d="M8 12l4 4 4-4" />
+              <path d="M12 8v8" />
+            </svg>
+            Download Free
+          </a>
+          <a href="#destinations" class="btn-ghost"> Explore destinations → </a>
+        </div>
+        <div class="store-badges">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.bonimostechnologies.visitethiopia"
+            class="store-badge"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+              />
+            </svg>
+            <div class="store-badge-text">
+              <small>Download on the</small><strong>App Store</strong>
+            </div>
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.bonimostechnologies.visitethiopia"
+            class="store-badge"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M3.18 23.76a2 2 0 001.68-.22l12.04-6.96-2.56-2.56-11.16 9.74zM20.72 10.27L17.4 8.34l-2.85 2.85 2.85 2.85 3.34-1.96a1.27 1.27 0 000-1.81zM2 1.52A1.3 1.3 0 001.5 2.5v19.02c0 .4.18.76.5.98L14.16 12 2 1.52zM4.86.46L16.9 7.42l-2.56 2.56L4.18.22A2 2 0 014.86.46z"
+              />
+            </svg>
+            <div class="store-badge-text">
+              <small>Get it on</small><strong>Google Play</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="scroll-hint">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+      <div class="stat reveal">
+        <div class="stat-num">9+</div>
+        <div class="stat-label">UNESCO Sites</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Destinations</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num">12</div>
+        <div class="stat-label">National Parks</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-num">3,000+</div>
+        <div class="stat-label">Years of History</div>
+      </div>
+    </div>
+
+    <!-- APP SECTION -->
+    <section class="app-section">
+      <div class="text-col reveal">
+        <div class="section-label">The App</div>
+        <h2>Your pocket<br /><em>guide to Ethiopia</em></h2>
+        <p class="app-desc">
+          Visit Ethiopia brings every corner of the country to your fingertips —
+          curated destinations, trusted local guides, immersive maps, and a
+          travel journal to capture your journey.
+        </p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon">🗺️</div>
+            <div class="feature-text">
+              <strong>Immersive Maps</strong
+              ><span
+                >Tap pins across Ethiopia to preview each escape with photos and
+                travel details.</span
+              >
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🧭</div>
+            <div class="feature-text">
+              <strong>Trusted Guides</strong
+              ><span
+                >Locally rooted partners for Simien treks, Danakil convoys, and
+                southern safaris.</span
+              >
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">📓</div>
+            <div class="feature-text">
+              <strong>Travel Journal</strong
+              ><span
+                >Log your adventures, save favorites, and share memories from
+                the road.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screenshot-gallery reveal">
+        <div class="screenshot-item">
+          <img
+            class="screenshot-image tall"
+            src="Screenshot_20260510_223043.png"
+            alt="Visit Ethiopia app home screen"
+          />
+          <div class="screenshot-caption">App Home</div>
+        </div>
+        <div class="screenshot-item">
+          <img
+            class="screenshot-image"
+            src="Screenshot_20260510_223117.png"
+            alt="Visit Ethiopia map screen"
+          />
+          <div class="screenshot-caption">Immersive Map</div>
+        </div>
+        <div class="screenshot-item">
+          <img
+            class="screenshot-image"
+            src="Screenshot_20260510_223139.png"
+            alt="Visit Ethiopia destination detail screen"
+          />
+          <div class="screenshot-caption">Destination Details</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTINATIONS -->
+    <section class="destinations-section" id="destinations">
+      <div class="section-label reveal">Destinations</div>
+      <h2 class="reveal">
+        Fifty escapes,<br /><em>one extraordinary country</em>
+      </h2>
+      <div class="cards-grid">
+        <div class="dest-card reveal">
+          <div
+            class="dest-card-img"
+            style="
+              background-image: url(&quot;walia-ibex-simien-mountains-national-park-ethiopia.jpg&quot;);
+            "
+          ></div>
+          <div class="dest-card-overlay"></div>
+          <div class="dest-card-content">
+            <span class="dest-tag">National Park</span>
+            <div class="dest-name">Simien Mountains National Park</div>
+            <div class="dest-meta">
+              Endemic Walia Ibex habitat · UNESCO World Heritage
+            </div>
+          </div>
+        </div>
+        <div class="dest-card reveal">
+          <div
+            class="dest-card-img"
+            style="
+              background-image: url(&quot;erta_ale23ea97c%20(1).jpeg&quot;);
+            "
+          ></div>
+          <div class="dest-card-overlay"></div>
+          <div class="dest-card-content">
+            <span class="dest-tag">Natural Wonder</span>
+            <div class="dest-name">Erta Ale Volcano, Danakil</div>
+            <div class="dest-meta">Active lava lake · Danakil Depression</div>
+          </div>
+        </div>
+        <div class="dest-card reveal">
+          <div
+            class="dest-card-img"
+            style="background-image: url(&quot;lalibela.jpg&quot;)"
+          ></div>
+          <div class="dest-card-overlay"></div>
+          <div class="dest-card-content">
+            <span class="dest-tag">Religious Site</span>
+            <div class="dest-name">Lalibela Rock-Hewn Churches</div>
+            <div class="dest-meta">
+              UNESCO World Heritage · Northern Highlands
+            </div>
+          </div>
+        </div>
+        <div
+          class="dest-card reveal"
+          style="aspect-ratio: 3/2; grid-column: span 2"
+        >
+          <div
+            class="dest-card-img"
+            style="background-image: url(&quot;Lake_wenchi_crater.jpg&quot;)"
+          ></div>
+          <div class="dest-card-overlay"></div>
+          <div class="dest-card-content">
+            <span class="dest-tag">Natural Wonder</span>
+            <div class="dest-name">Lake Wenchi Crater</div>
+            <div class="dest-meta">Highland crater lake · Monastery island</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WILDLIFE -->
+    <section class="wildlife-section">
+      <div class="reveal">
+        <div class="section-label" style="color: var(--gold)">Wildlife</div>
+        <h2>Meet the <em>endemic wonders</em></h2>
+        <p class="wildlife-desc">
+          Ethiopia is home to animals found nowhere else on Earth — the
+          critically endangered Ethiopian Wolf, the majestic Walia Ibex, and
+          Gelada baboons that roam the highland cliffs of the Simien
+          escarpments.
+        </p>
+        <div
+          style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap"
+        >
+          <a
+            href="#download"
+            class="btn-primary"
+            style="background: var(--amber)"
+            >Plan a Wildlife Trip</a
+          >
+        </div>
+      </div>
+      <div class="wildlife-grid reveal">
+        <div class="wildlife-img" style="grid-column: 1/-1; aspect-ratio: 16/7">
+          <img
+            src="ethiopian-wolf-bale-national-park.jpg"
+            alt="Ethiopian Wolf in Bale National Park"
+            onerror="
+              this.src =
+                'https://images.unsplash.com/photo-1504173010664-32509107de0a?w=800&q=80'
+            "
+          />
+        </div>
+        <div class="wildlife-img">
+          <img
+            src="walia-ibex-simien-mountains-national-park-ethiopia.jpg"
+            alt="Walia Ibex"
+            onerror="
+              this.src =
+                'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80'
+            "
+          />
+        </div>
+        <div class="wildlife-img">
+          <img
+            src="ethiopianwolfsimienmountains.jpg"
+            alt="Ethiopian Wolf in the Simien Mountains"
+            onerror="
+              this.src =
+                'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400&q=80'
+            "
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- GUIDES -->
+    <section class="guides-section">
+      <div class="section-label reveal">Trusted Field Partners</div>
+      <h2 class="reveal">Guides who <em>live the land</em></h2>
+      <p class="guides-desc reveal">
+        Locally rooted guides keep logistics smooth, share cultural nuance, and
+        help you travel responsibly.
+      </p>
+      <div class="guides-grid">
+        <div class="guide-card reveal">
+          <div class="guide-avatar">🏔️</div>
+          <div class="guide-name">Sahlie B.</div>
+          <div class="guide-org">Discover Simien Tours</div>
+          <div class="guide-region">
+            Simien Mountains, Danakil Depression & the northern historic
+            circuit.
+          </div>
+        </div>
+        <div class="guide-card reveal">
+          <div class="guide-avatar">🌋</div>
+          <div class="guide-name">ETT</div>
+          <div class="guide-org">Ethio Travel and Tours</div>
+          <div class="guide-region">
+            Flagship operator for Danakil Depression, Erta Ale & mixed adventure
+            itineraries.
+          </div>
+        </div>
+        <div class="guide-card reveal">
+          <div class="guide-avatar">🦅</div>
+          <div class="guide-name">Simien Tour</div>
+          <div class="guide-org">Local Guides Association</div>
+          <div class="guide-region">
+            Dedicated trekking crews for Simien escarpments and the Ras Dashen
+            summit.
+          </div>
+        </div>
+        <div class="guide-card reveal">
+          <div class="guide-avatar">🐺</div>
+          <div class="guide-name">Bale Eco Lodge</div>
+          <div class="guide-org">Bale Mountains Specialists</div>
+          <div class="guide-region">
+            Wildlife-focused guides for Ethiopian Wolf and Harenna Forest
+            trekking.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD CTA -->
+    <section class="cta-section" id="download">
+      <div class="section-label">Download</div>
+      <h2>Start your <em>Ethiopian journey</em> today</h2>
+      <p class="cta-desc">
+        Free to download. No booking fees. Just curated, honest travel guidance
+        built by people who love Ethiopia.
+      </p>
+      <div class="cta-badges">
+        <a
+          href="https://play.google.com/store/apps/details?id=com.bonimostechnologies.visitethiopia"
+          class="cta-badge"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+            />
+          </svg>
+          <div class="cta-badge-text">
+            <small>Download on the</small><strong>App Store</strong>
+          </div>
+        </a>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.bonimostechnologies.visitethiopia"
+          class="cta-badge"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M3.18 23.76a2 2 0 001.68-.22l12.04-6.96-2.56-2.56-11.16 9.74zM20.72 10.27L17.4 8.34l-2.85 2.85 2.85 2.85 3.34-1.96a1.27 1.27 0 000-1.81zM2 1.52A1.3 1.3 0 001.5 2.5v19.02c0 .4.18.76.5.98L14.16 12 2 1.52zM4.86.46L16.9 7.42l-2.56 2.56L4.18.22A2 2 0 014.86.46z"
+            />
+          </svg>
+          <div class="cta-badge-text">
+            <small>Get it on</small><strong>Google Play</strong>
+          </div>
+        </a>
+      </div>
+      <div class="qr-row">
+        <div class="qr-box">
+          <div class="qr-placeholder" id="qr">
+            <img src="qrcode.png" alt="" />
+          </div>
+          <div class="qr-info">
+            <strong>Scan to Download</strong>Point your phone camera at the QR
+            code<br />to go directly to the app store listing.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div
+        style="
+          font-family: &quot;Cormorant Garamond&quot;, serif;
+          font-size: 1.1rem;
+          color: rgba(255, 255, 255, 0.5);
+          margin-bottom: 0.75rem;
+        "
+      >
+        Visit Ethiopia
+      </div>
+      <div>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+        <a href="#">Instagram</a>
+      </div>
+      <div style="margin-top: 1rem">
+        © 2026 Visit Ethiopia. Made with ♥ for travelers.
+      </div>
+    </footer>
+
+    <script>
+      // Sticky nav
+      const nav = document.getElementById("nav");
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("scrolled", window.scrollY > 60);
+      });
+
+      // Scroll reveal
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+              setTimeout(() => e.target.classList.add("visible"), i * 80);
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      reveals.forEach((el) => observer.observe(el));
+
+    </script>
+  </body>
+</html>
